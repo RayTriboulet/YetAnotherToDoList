@@ -2,6 +2,24 @@
 
 <h1>ToDo</h1>
 
-@code {
+<ul>
 
+    @foreach (var taskItem in taskList)
+    {
+        if (taskItem.IsComplete)
+        {
+            <!--Task Completed-->
+            <li>@taskItem.TaskName</li>
+        }
+        else
+        {
+            <!--Task Not Completed-->
+            <li>@taskItem.TaskName</li>
+        }
+    }
+
+</ul>
+
+@code {
+    protected List<TaskModel> taskList = new List<TaskModel>();
 }
